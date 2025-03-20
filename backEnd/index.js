@@ -1,0 +1,21 @@
+const express=require("express")
+const app=express()
+const cors =require("cors")
+require("dotenv").config()
+const port =process.env.PORT 
+const connectDB =require("./config/db")
+const authRoutes =require("./routes/auth")
+const donarRoutes= require("./routes/donarAuth")
+const HospitalRoutes=require("./routes/HospitalRoutes")
+const recipientRoutes=require("./routes/recipientAuth")
+app.use(cors())
+app.use(express.urlencoded({
+    extended:true
+}))
+app.use(express.json())
+connectDB()
+app.use("/api/auth",authRoutes)
+app.use("/api/donarauth",donarRoutes)
+app.use("/api/hospital",HospitalRoutes)
+app.use("/api/recipientauth",recipientRoutes)
+app.listen(port,()=>console.log("Server is running on port:",port))
