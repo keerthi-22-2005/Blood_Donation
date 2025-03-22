@@ -53,7 +53,7 @@ const RecipientRegister = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/recipientauth/request-blood",
+        "https://blood-donation-back-piab.onrender.com/api/recipientauth/request-blood",
         { ...formData },
         {
           headers: {
