@@ -16,7 +16,7 @@ const RequestDetails = () => {
       setLoading(true);
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:5000/api/recipientauth/request-details", {
+        const response = await axios.get("https://blood-donation-back-piab.onrender.com/api/recipientauth/request-details", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -34,7 +34,7 @@ const RequestDetails = () => {
 
     const fetchHospitals = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/hospital/list");
+        const response = await axios.get("https://blood-donation-back-piab.onrender.com/api/hospital/list");
         setHospitals(response.data);
       } catch (err) {
         console.error("Failed to fetch hospitals:", err);
