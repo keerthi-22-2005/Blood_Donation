@@ -16,7 +16,7 @@ const GetHospital = () => {
     const fetchHospitals = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/hospital/hospital-blood?bloodGroup=${encodeURIComponent(bloodGroup)}`
+          `https://blood-donation-back-piab.onrender.com/api/hospital/hospital-blood?bloodGroup=${encodeURIComponent(bloodGroup)}`
         );
         setHospitals(response.data);
         setShowReloadMessage(true);
