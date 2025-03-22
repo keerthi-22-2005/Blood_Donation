@@ -47,7 +47,7 @@ const DonorRegister = () => {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/donarauth/book-appointment",
+        "https://blood-donation-back-piab.onrender.com/api/donarauth/book-appointment",
         formData,
         {
           headers: {
