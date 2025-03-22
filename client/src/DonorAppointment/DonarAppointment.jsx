@@ -14,7 +14,7 @@ const DonorAppointment = () => {
       try {
         if (!user) return;
 
-        const res = await axios.get("http://localhost:5000/api/donarauth/appointment-details", {
+        const res = await axios.get("https://blood-donation-back-piab.onrender.com/api/donarauth/appointment-details", {
           headers: { Authorization: `Bearer ${user.token}` },
         });
         setAppointment(res.data);
@@ -33,7 +33,7 @@ const DonorAppointment = () => {
       if (!appointment || !appointment.bloodGroup) return;
 
       try {
-        const res = await axios.get(`http://localhost:5000/api/hospital/hospital-blood?bloodGroup=${encodeURIComponent(appointment.bloodGroup)}`);
+        const res = await axios.get(`https://blood-donation-back-piab.onrender.com/api/hospital/hospital-blood?bloodGroup=${encodeURIComponent(appointment.bloodGroup)}`);
         setHospitals(res.data);
       } catch (err) {
         setHospitals([]);
