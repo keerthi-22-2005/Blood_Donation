@@ -53,7 +53,7 @@ const RequestDetails = () => {
       const token = localStorage.getItem("token");
 
       const response = await axios.put(
-        `http://localhost:5000/api/recipientauth/assign-hospital/${requestDetails._id}`,
+        `https://blood-donation-back-piab.onrender.com/api/recipientauth/assign-hospital/${requestDetails._id}`,
         { hospitalId: selectedHospital },
         { headers: { Authorization: `Bearer ${token}` } }
       );
