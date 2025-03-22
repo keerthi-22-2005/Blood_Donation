@@ -16,7 +16,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", formData);
+      const res = await axios.post("https://blood-donation-back-piab.onrender.com/api/auth/login", formData);
       const { token, user } = res.data;
 
       localStorage.setItem("token", token);
