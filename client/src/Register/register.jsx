@@ -24,7 +24,7 @@ const Register = () => {
       setFormData({ username: "", email: "", password: "", mobile: "" });
 
       // Redirect to Home Page after successful registration
-      navigate("/");
+      navigate("/login");
     } catch (error) {
       setMessage(error.response?.data?.message || "Registration failed");
     }
@@ -35,9 +35,13 @@ const Register = () => {
       className="d-flex align-items-center justify-content-center min-vh-100"
       style={{
         backgroundImage: "url('https://muhtawi.com/wp-content/uploads/2022/10/59888402-8222-40BD-9932-819DA88F57C6-1024x640.jpeg')",
-        backgroundSize :"cover",
+        backgroundSize: "100% 100%",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+        height: "100vh",
+        width: "100vw",
+        position: "relative",
       }}
     >
       {/* Overlay */}

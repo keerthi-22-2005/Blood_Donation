@@ -16,7 +16,10 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://blood-donation-back-piab.onrender.com/api/auth/login", formData);
+      const res = await axios.post(
+        "https://blood-donation-back-piab.onrender.com/api/auth/login",
+        formData
+      );
       const { token, user } = res.data;
 
       localStorage.setItem("token", token);
@@ -35,20 +38,32 @@ const Login = () => {
 
   return (
     <div
-      className="d-flex align-items-center justify-content-center min-vh-100"
+      className="d-flex align-items-center justify-content-center min-vh-100 position-relative"
       style={{
-        backgroundImage: "url('https://cdn.storymd.com/optimized/Ro6kepcXdx/thumbnail.png')",
-        backgroundSize :"cover",
+        backgroundImage:
+          "url('https://cdn.storymd.com/optimized/Ro6kepcXdx/thumbnail.png')",
+        backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
+        width: "100%",
+        height: "100vh",
       }}
     >
       {/* Overlay */}
       <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
 
-      <div className="card p-4 shadow-lg position-relative" style={{ width: "400px", backgroundColor: "rgba(255, 255, 255, 0.9)", borderRadius: "10px" }}>
+      <div
+        className="card p-4 shadow-lg position-relative"
+        style={{
+          width: "400px",
+          backgroundColor: "rgba(255, 255, 255, 0.9)",
+          borderRadius: "10px",
+        }}
+      >
         <h2 className="text-center text-primary fw-bold mb-3">Login</h2>
-        {message && <p className="text-center text-danger fw-bold">{message}</p>}
+        {message && (
+          <p className="text-center text-danger fw-bold">{message}</p>
+        )}
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label className="form-label fw-bold">Email</label>
