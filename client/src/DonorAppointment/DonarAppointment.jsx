@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import axios from "axios";
-import { AuthContext } from "../context/authContext";
+import { AuthContext } from "../Context/authContext";
 
 const DonorAppointment = () => {
   const { user } = useContext(AuthContext);
